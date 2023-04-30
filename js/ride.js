@@ -42,7 +42,7 @@ let map;
         });
     }
     
-async function loguserlogin(){
+ function loguserlogin(){
     try {
         var params = {
             KeyConditionExpression: 'User = :User',
@@ -53,6 +53,7 @@ async function loguserlogin(){
         };
         var result = await dynamodb.query(params).promise()
         console.log(JSON.stringify(result))
+        displayUpdate('Your Trip Number:' loguserlogin.result, unicorn.Color);
     } catch (error) {
         console.error(error);
     }
@@ -76,7 +77,7 @@ loguserlogin()
 
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
-            displayUpdate('Your Trip Number: loguserlogin.result', unicorn.Color);
+            displayUpdate('Your Trip Number:' loguserlogin.result, unicorn.Color);
             WildRydes.map.unsetLocation();
 
             $('#request').prop('disabled', 'disabled');
