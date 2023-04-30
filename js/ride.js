@@ -48,7 +48,7 @@ let map;
         var params = {
             KeyConditionExpression: 'User = :User',
             ExpressionAttributeValues: {
-                ':artist': {'S': 'gkraja99-at-gmail.com'}
+                ':User': {'S': 'gkraja99-at-gmail.com'}
             },
             TableName: Rides
         };
