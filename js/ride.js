@@ -59,6 +59,7 @@ let map;
 
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
+            displayUpdate('This is your 3 rd trip!', unicorn.Color);
             WildRydes.map.unsetLocation();
 
             $('#request').prop('disabled', 'disabled');
