@@ -53,7 +53,6 @@ let map;
         };
         var result = await dynamodb.query(params).promise()
         console.log(JSON.stringify(result))
-        displayUpdate('Your Trip Number:' loguserlogin.result, unicorn.Color);
     } catch (error) {
         console.error(error);
     }
