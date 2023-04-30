@@ -42,7 +42,7 @@ let map;
         });
     }
     
- function loguserlogin(){
+ async function loguserlogin(){
     try {
         var params = {
             KeyConditionExpression: 'User = :User',
