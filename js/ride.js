@@ -41,7 +41,24 @@ let map;
             }
         });
     }
-
+    
+async function loguserlogin(){
+    try {
+        var params = {
+            KeyConditionExpression: 'User = :User',
+            ExpressionAttributeValues: {
+                ':User': {'S': 'gkraja99-at-gmail.com'}
+            },
+            TableName: Rides
+        };
+        var result = await dynamodb.query(params).promise()
+        console.log(JSON.stringify(result))
+    } catch (error) {
+        console.error(error);
+    }
+}
+loguserlogin()
+    
     //  completeRequest
     //      a Unicorn has been dispatched to your location
     function completeRequest(result, pickupLocation) {
@@ -59,7 +76,7 @@ let map;
 
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
-            displayUpdate('Your Trip Number: 3', unicorn.Color);
+            displayUpdate('Your Trip Number: loguserlogin.result', unicorn.Color);
             WildRydes.map.unsetLocation();
 
             $('#request').prop('disabled', 'disabled');
