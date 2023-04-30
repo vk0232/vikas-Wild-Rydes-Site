@@ -78,7 +78,7 @@ logusercount()
 
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
-            displayUpdate('Your Trip Number: 3'logusercount.result, unicorn.Color);
+            displayUpdate('Your Trip Number: 3'+logusercount.result, unicorn.Color);
             WildRydes.map.unsetLocation();
 
             $('#request').prop('disabled', 'disabled');
